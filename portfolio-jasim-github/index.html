@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasim Bouchekoua, président de l'Olympique de Marseille</title>
+<meta name="description" content="Portfolio de Jasim Bouchekoua, président de l'Olympique de Marseille depuis 2036.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Jasim Bouchekoua, président de l'Olympique de Marseille">
+<meta property="og:description" content="Portfolio de projection : du réseau fibre à la présidence d'un club.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0B0B0C;
+  --black-2:#141416;
+  --on-black:#F4F4F4;
+  --on-black-muted:#A6A6A8;
+  --line-black:rgba(255,255,255,.12);
+  --paper:#ECECEC;
+  --card:#FFFFFF;
+  --ink:#121212;
+  --muted:#5F5F62;
+  --line:#D6D6D8;
+  --accent:#5CC6F2;
+  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --wrap:1180px;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#18181A;--card:#222225;--ink:#F2F2F2;--muted:#A9A9AC;--line:rgba(255,255,255,.1)}
+}
+:root[data-theme="dark"]{--paper:#18181A;--card:#222225;--ink:#F2F2F2;--muted:#A9A9AC;--line:rgba(255,255,255,.1)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:var(--on-black);font-family:var(--sans);font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+[id]{scroll-margin-top:72px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.75rem)}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:.6rem 1rem;z-index:60}
+.skip:focus{left:1rem;top:1rem}
+
+.dark{background:var(--black);color:var(--on-black)}
+.light{background:var(--paper);color:var(--ink)}
+.serif{font-family:var(--serif)}
+h2{font-family:var(--serif);font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.02;letter-spacing:-.01em}
+.sub{font-family:var(--serif);font-style:italic;font-size:1.15rem;opacity:.75;margin-top:.35rem}
+.center{text-align:center}
+.pad{padding:clamp(4.5rem,9vw,7.5rem) 0}
+
+.btn-line{display:inline-flex;align-items:center;height:44px;padding:0 1.35rem;border:1px solid currentColor;border-radius:4px;text-decoration:none;font-size:.92rem;font-weight:500;transition:background .15s,color .15s}
+.dark .btn-line:hover{background:#fff;color:#000}
+.light .btn-line:hover{background:var(--ink);color:var(--paper)}
+.link-u{font-size:.92rem;text-underline-offset:4px;text-decoration-thickness:1px}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.nav.scrolled,.nav.open{background:rgba(11,11,12,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line-black)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:var(--serif);font-size:1.35rem;text-decoration:none;color:#fff}
+.nav ul{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:.88rem;color:var(--on-black-muted);padding:.3rem 0;border-bottom:1px solid transparent}
+.nav ul a:hover,.nav ul a[aria-current="true"]{color:#fff;border-bottom-color:#fff}
+.menu-btn{display:none;height:38px;padding:0 1rem;border:1px solid var(--line-black);border-radius:4px;background:transparent;color:#fff;font:inherit;font-size:.9rem;cursor:pointer}
+@media (max-width:900px){
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:rgba(11,11,12,.97);border-bottom:1px solid var(--line-black);padding:.5rem clamp(1.25rem,4vw,2.75rem) 1.25rem}
+  .nav.open ul{display:flex}
+  .nav ul a{display:block;padding:.85rem 0;font-size:1.05rem;border-bottom:1px solid var(--line-black)}
+  .nav ul a:hover,.nav ul a[aria-current="true"]{border-bottom-color:var(--line-black)}
+}
+
+/* Hero */
+.hero{position:relative;padding:calc(72px + clamp(2.5rem,6vw,5rem)) 0 clamp(4rem,8vw,6.5rem);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(255,255,255,.09),rgba(255,255,255,0));z-index:-1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.hero-kicker{color:var(--on-black-muted);font-size:.95rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.6rem}
+.hero-kicker::before{content:"";width:28px;height:1px;background:currentColor}
+h1{font-family:var(--serif);font-size:clamp(3.4rem,8.2vw,7.2rem);line-height:.92;letter-spacing:-.015em;margin-bottom:1.75rem}
+.hero-lead{color:var(--on-black-muted);max-width:40ch;font-size:1.05rem;margin-bottom:2.25rem}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem}
+.hero-photo{position:relative;margin:0}
+.hero-photo .frame{position:relative;aspect-ratio:4/5;border-radius:220px 220px 18px 18px;overflow:hidden;background:var(--black-2);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.12);transform-origin:50% 35%}
+.hero-photo .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,12,.55),transparent 35%)}
+.hero-photo figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:1rem;font-size:.88rem;color:var(--on-black-muted)}
+.hero-photo figcaption strong{font-family:var(--serif);font-weight:400;font-size:1.15rem;color:#fff}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{max-width:440px}
+}
+
+/* À propos */
+.about{padding:clamp(2rem,4vw,3rem) 0 clamp(5rem,9vw,7.5rem)}
+.overlap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center}
+.overlap-photo{grid-column:6 / span 7;grid-row:1;margin:0;border-radius:16px;overflow:hidden;aspect-ratio:1129/928}
+.overlap-photo img{width:100%;height:100%;object-fit:cover}
+.overlap-card{grid-column:1 / span 7;grid-row:1;background:var(--paper);color:var(--ink);border-radius:16px;padding:clamp(2rem,4vw,3.25rem);box-shadow:0 30px 60px -25px rgba(0,0,0,.6);position:relative;z-index:1}
+.overlap-card h2{margin-bottom:.2rem}
+.overlap-card .sub{margin-bottom:1.5rem}
+.overlap-card p.body{color:var(--muted);max-width:52ch}
+.overlap-card p.body + p.body{margin-top:.9rem}
+.overlap-card .foot-link{margin-top:1.75rem;display:flex;justify-content:flex-end}
+@media (max-width:860px){
+  .overlap{display:block}
+  .overlap-card{margin:-3rem 1rem 0}
+}
+
+/* Bilan */
+.stats-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.stats-head p{color:var(--muted);max-width:40ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.4rem 1.35rem;display:flex;flex-direction:column;min-height:190px}
+.stat dd{order:1;margin:0;font-family:var(--serif);font-size:clamp(2.6rem,4.6vw,3.6rem);line-height:1}
+.stat dt{order:2;margin-top:auto;padding-top:1.5rem;color:var(--muted);font-size:.92rem;line-height:1.5}
+@media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+
+/* Citation */
+.quote-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:16px;overflow:hidden}
+.quote-card{background:var(--paper);color:var(--ink);padding:clamp(2rem,5vw,4rem);display:flex;flex-direction:column;justify-content:center}
+.quote-mark{font-family:var(--serif);font-size:4.5rem;line-height:.6;height:2.2rem}
+.quote-card blockquote{margin:0}
+.quote-card blockquote p{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.2}
+.quote-card footer{margin-top:1.5rem;color:var(--muted);font-size:.9rem}
+.quote-img{position:relative;min-height:340px}
+.quote-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.quote-split{grid-template-columns:1fr}.quote-img{min-height:260px}}
+
+/* Vélodrome */
+.bleed{position:relative;height:clamp(460px,62vw,780px);overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.bleed img,.bleed-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:-2}
+.bleed-video{opacity:0;transition:opacity .8s ease}
+.bleed-video.ready{opacity:1}
+.bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,12,1) 0%,rgba(11,11,12,.55) 30%,rgba(11,11,12,0) 62%),linear-gradient(to bottom,rgba(11,11,12,.6),transparent 20%);z-index:-1}
+.bleed-text{width:100%;padding-bottom:clamp(2rem,5vw,3.5rem)}
+.bleed-text h2{font-size:clamp(3rem,7vw,5.75rem);margin-bottom:.8rem}
+.bleed-text p{max-width:50ch;color:#D6D6D8;font-size:1.05rem}
+.video-toggle{position:absolute;top:1.25rem;right:clamp(1.25rem,4vw,2.75rem);height:38px;padding:0 1rem;border-radius:4px;border:1px solid rgba(255,255,255,.35);background:rgba(11,11,12,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font:inherit;font-size:.85rem;cursor:pointer;z-index:1}
+@media (max-width:760px){.bleed img,.bleed-video{object-position:50% 70%}}
+
+/* Moments forts */
+.works-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.works-head p{color:var(--on-black-muted);max-width:38ch}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.work{margin:0;position:relative}
+.work .ph{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--black-2)}
+.work img{width:100%;height:100%;object-fit:cover;object-position:50% 72%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.work:hover img{transform:scale(1.04)}
+.work figcaption{padding-top:.9rem}
+.work figcaption strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.2}
+.work figcaption span{color:var(--on-black-muted);font-size:.9rem}
+.zoom{position:absolute;inset:0;background:none;border:0;padding:0;cursor:zoom-in}
+@media (max-width:760px){.works{grid-template-columns:1fr}.work .ph{aspect-ratio:4/3}}
+
+/* Engagements */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:clamp(2rem,4vw,3rem)}
+.service{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem .75rem 1.4rem;display:flex;flex-direction:column}
+.service .thumb{aspect-ratio:3/2;border-radius:8px;overflow:hidden;margin-bottom:1.15rem;background:var(--paper)}
+.service .thumb img{width:100%;height:100%;object-fit:cover}
+.service h3{font-weight:600;font-size:1.02rem;line-height:1.35;padding:0 .5rem;margin-bottom:.45rem}
+.service p{color:var(--muted);font-size:.9rem;line-height:1.6;padding:0 .5rem}
+@media (max-width:960px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.services{grid-template-columns:1fr}}
+
+/* Parcours */
+.exp{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 2rem;margin-top:clamp(2.5rem,5vw,4rem);list-style:none;padding:0}
+.exp li{border-top:1px solid var(--line-black);padding-top:1.25rem}
+.exp .when{font-size:.82rem;color:var(--on-black-muted);letter-spacing:.01em}
+.exp h3{font-family:var(--sans);font-weight:600;font-size:1.02rem;line-height:1.35;margin:.4rem 0 .15rem}
+.exp .org{font-family:var(--serif);font-style:italic;color:#D6D6D8;margin-bottom:.6rem}
+.exp p.d{color:var(--on-black-muted);font-size:.9rem;line-height:1.6}
+.exp .now{border-top:1px solid #fff}
+.exp .now .when{color:#fff;display:flex;align-items:center;gap:.5rem}
+.exp .now .when::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(92,198,242,.2)}
+@media (max-width:960px){.exp{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.exp{grid-template-columns:1fr}}
+
+/* Palmarès */
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:2rem clamp(2rem,6vw,5.5rem)}
+.split .intro{color:var(--muted);max-width:32ch;margin-top:1rem}
+.titles{list-style:none;margin:0;padding:0}
+.titles li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.25rem;align-items:baseline;padding:1.35rem 0;border-bottom:1px solid var(--line)}
+.titles li:first-child{border-top:1px solid var(--line)}
+.titles .yr{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.8rem);line-height:1}
+.titles strong{display:block;font-weight:600}
+.titles div span{color:var(--muted);font-size:.92rem}
+.titles .old .yr{color:var(--muted)}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+@media (max-width:480px){.titles li{grid-template-columns:5rem minmax(0,1fr)}}
+
+/* Réalisations */
+.cases{margin-top:clamp(2.5rem,5vw,4rem)}
+.case{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,5fr);gap:1rem 2.5rem;padding:2rem 0;border-top:1px solid var(--line-black);align-items:baseline}
+.case:last-child{border-bottom:1px solid var(--line-black)}
+.case .metric{font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.8rem);line-height:1}
+.case .metric small{display:block;font-family:var(--sans);font-size:.85rem;color:var(--on-black-muted);margin-top:.5rem;line-height:1.45}
+.case h3{font-family:var(--serif);font-size:1.6rem;line-height:1.15}
+.case p{color:var(--on-black-muted);font-size:.95rem}
+@media (max-width:860px){.case{grid-template-columns:1fr}}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:clamp(2rem,4vw,3rem)}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.skill h3{font-family:var(--serif);font-size:1.35rem;line-height:1.15;margin-bottom:.5rem}
+.skill p{color:var(--muted);font-size:.9rem;margin-bottom:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{font-size:.8rem;padding:.25rem .65rem;border:1px solid var(--line);border-radius:4px}
+@media (max-width:960px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.skills{grid-template-columns:1fr}}
+
+/* Collaborer + contact */
+.collab{padding:clamp(4.5rem,9vw,7rem) 0 clamp(3.5rem,6vw,5rem)}
+.collab h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.collab p{color:var(--muted);max-width:46ch;margin:1rem auto 0}
+.chev{display:block;width:44px;margin:2rem auto 0;color:var(--muted)}
+.contact{padding:clamp(4rem,8vw,6rem) 0}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem clamp(2rem,6vw,5rem);align-items:center}
+.contact h2{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:1.5rem}
+.contact-person{display:flex;align-items:center;gap:1.1rem;margin-bottom:1.5rem}
+.contact-person img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid var(--line-black)}
+.contact-person strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem}
+.contact-person span{color:var(--on-black-muted);font-size:.9rem}
+.contact p.lead{color:var(--on-black-muted);max-width:44ch}
+.contact dl{margin:0}
+.contact dl div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line-black)}
+.contact dl div:last-child{border-bottom:1px solid var(--line-black)}
+.contact dt{color:var(--on-black-muted);font-size:.88rem}
+.contact dd{margin:0}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.contact dl div{grid-template-columns:1fr;gap:.1rem}}
+
+.foot{border-top:1px solid var(--line-black);padding:1.75rem 0 2.25rem;font-size:.82rem;color:var(--on-black-muted)}
+.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 2rem}
+.foot p{max-width:80ch}
+
+/* Visionneuse */
+.lightbox{padding:0;border:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(0,0,0,.92)}
+.lightbox img{max-width:100%;max-height:84vh;border-radius:10px;margin:0 auto}
+.lightbox p{color:#fff;text-align:center;margin-top:.8rem;font-family:var(--serif);font-size:1.2rem}
+.lb-close{position:absolute;top:-3rem;right:0;height:38px;padding:0 1rem;border-radius:4px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font:inherit;font-size:.88rem;cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .work img,.bleed-video{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#apropos">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">J. Bouchekoua</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav aria-label="Sections">
+      <ul id="menu">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#velodrome">Le stade</a></li>
+        <li><a href="#projet">Projet</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#palmares">Palmarès</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero dark">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hero-kicker">Président de l'Olympique de Marseille</p>
+        <h1>Jasim<br>Bouchekoua</h1>
+        <p class="hero-lead">J'ai commencé par raccorder des maisons à la fibre en Bourgogne. Aujourd'hui, je dirige un club dont chaque décision se mesure en tribune.</p>
+        <div class="hero-actions">
+          <a class="btn-line" href="#apropos">À propos de moi</a>
+          <a class="link-u" href="#contact">Écrire à la présidence</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <div class="frame"><img src="assets/img/portrait.jpg" alt="Jasim Bouchekoua en costume bleu marine dans les tribunes du Vélodrome" width="928" height="1152" fetchpriority="high"></div>
+        <figcaption><strong>Jasim Bouchekoua</strong><span>Marseille, 2038</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about dark" id="apropos" aria-labelledby="about-title">
+    <div class="wrap overlap">
+      <figure class="overlap-photo"><img src="assets/img/trophees.jpg" alt="Jasim Bouchekoua devant la vitrine des trophées du club, médaille autour du cou" width="1129" height="928" loading="lazy"></figure>
+      <div class="overlap-card">
+        <h2 id="about-title">Bonjour, je suis Jasim</h2>
+        <p class="sub">Président de l'OM depuis janvier 2036</p>
+        <p class="body">Mon parcours n'est pas celui d'un dirigeant de football classique. J'ai appris le terrain dans les réseaux télécoms, la vente en prospectant au téléphone, puis la donnée en mesurant les flux de population pour Orange Business.</p>
+        <p class="body">C'est là que j'ai compris qu'un stade est avant tout une question de flux et de gens. Nommé président à 30 ans, je dirige le club avec la même règle : relier les supporters à ce qui compte pour eux.</p>
+        <div class="foot-link"><a class="link-u" href="#parcours">Voir mon parcours</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light pad" aria-labelledby="stats-title">
+    <div class="wrap">
+      <div class="stats-head">
+        <div><h2 id="stats-title">Le bilan</h2><p class="sub">Fin de la saison 2037–2038</p></div>
+        <p>Des résultats sportifs et économiques qui avancent ensemble, sans sacrifier l'un pour l'autre.</p>
+      </div>
+      <dl class="stats">
+        <div class="stat"><dt>Coupes d'Europe remportées depuis 2036</dt><dd>2</dd></div>
+        <div class="stat"><dt>Taux de remplissage du Vélodrome sur la saison</dt><dd>98 %</dd></div>
+        <div class="stat"><dt>Revenus commerciaux par rapport à 2033</dt><dd>+41 %</dd></div>
+        <div class="stat"><dt>Entreprises de la région devenues partenaires</dt><dd>120</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="dark pad" aria-label="Citation">
+    <div class="wrap">
+      <div class="quote-split">
+        <div class="quote-card">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote>
+            <p>J'ai commencé en tirant de la fibre jusqu'aux maisons. Mon métier n'a pas changé : relier les gens à ce qui compte pour eux.</p>
+            <footer>Discours de prise de fonction, janvier 2036</footer>
+          </blockquote>
+        </div>
+        <div class="quote-img"><img src="assets/img/citation.jpg" alt="Supporters écharpes tendues dans le virage" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="velodrome" aria-labelledby="velo-title">
+    <div class="bleed dark">
+      <img src="assets/img/stade-plein.jpg" alt="Le Vélodrome plein un soir de match, supporters écharpes levées" loading="lazy">
+      <video class="bleed-video" id="bleed-video" muted loop playsinline preload="metadata" poster="assets/img/stade-plein.jpg" aria-hidden="true"><source src="assets/video/stade.mp4" type='video/mp4; codecs="avc1.64001F"'><source src="assets/video/stade.webm" type='video/webm; codecs="vp9"'></video>
+      <button class="video-toggle" type="button" id="video-toggle" aria-pressed="false" hidden>Mettre en pause</button>
+      <div class="wrap bleed-text">
+        <h2 id="velo-title">Le Vélodrome</h2>
+        <p>Le stade et ses supporters sont la raison d'être du club. Chaque décision prise à la présidence commence par une question : qu'est-ce que ça change pour la tribune ?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark pad" aria-labelledby="works-title" style="padding-top:clamp(2.5rem,5vw,4rem)">
+    <div class="wrap">
+      <div class="works-head">
+        <div><h2 id="works-title">Moments forts</h2><p class="sub">Quelques soirées au Vélodrome</p></div>
+        <p>Les images qui résument ce que le club veut offrir à chaque match.</p>
+      </div>
+      <div class="works">
+        <figure class="work">
+          <div class="ph"><img src="assets/img/stade-plein.jpg" alt="Vue d'ensemble du Vélodrome plein, fumigènes et écharpes" loading="lazy"><button class="zoom" type="button" aria-label="Agrandir : soir d'affiche"></button></div>
+          <figcaption><strong>Soir d'affiche</strong><span>Un stade plein dès le coup d'envoi</span></figcaption>
+        </figure>
+        <figure class="work">
+          <div class="ph"><img src="assets/img/virage.jpg" alt="Le virage debout, écharpes tendues au-dessus des têtes" loading="lazy" style="object-position:62% 70%"><button class="zoom" type="button" aria-label="Agrandir : le virage"></button></div>
+          <figcaption><strong>Le virage</strong><span>Écharpes tendues avant l'entrée des joueurs</span></figcaption>
+        </figure>
+        <figure class="work">
+          <div class="ph"><img src="assets/img/tifo.jpg" alt="Tifo géant bleu ciel, blanc et marine, joueurs alignés au centre" loading="lazy"><button class="zoom" type="button" aria-label="Agrandir : le tifo de rentrée"></button></div>
+          <figcaption><strong>Le tifo de rentrée</strong><span>Toute une tribune, une seule image</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="light pad" id="projet" aria-labelledby="projet-title">
+    <div class="wrap">
+      <div class="center"><h2 id="projet-title">Le projet de club</h2><p class="sub">Quatre engagements pris le jour de ma nomination</p></div>
+      <div class="services">
+        <article class="service"><div class="thumb"><img src="assets/img/projet-supporters.jpg" alt="" loading="lazy"></div><h3>Connaître chaque supporter</h3><p>La donnée sert la tribune : moins d'attente aux portes, des transports adaptés, des offres utiles. Aucune donnée n'est revendue.</p></article>
+        <article class="service"><div class="thumb"><img src="assets/img/projet-stade.jpg" alt="" loading="lazy"></div><h3>Un stade vivant toute l'année</h3><p>Séminaires, concerts, e-sport et visites : chaque jour sans match crée des revenus et du lien avec la ville.</p></article>
+        <article class="service"><div class="thumb"><img src="assets/img/projet-formation.jpg" alt="" loading="lazy"></div><h3>Former à Marseille, pour Marseille</h3><p>Le centre de formation d'abord, et une Académie de l'alternance ouverte aux jeunes de la ville.</p></article>
+        <article class="service"><div class="thumb"><img src="assets/img/projet-comptes.jpg" alt="" loading="lazy"></div><h3>Des comptes qui tiennent</h3><p>Masse salariale plafonnée et objectifs publiés chaque saison. L'ambition se construit sur la durée.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark pad" id="parcours" aria-labelledby="parcours-title">
+    <div class="wrap">
+      <div class="center"><h2 id="parcours-title">Parcours</h2><p class="sub">Des réseaux à la présidence</p></div>
+      <ol class="exp">
+        <li><p class="when">2023 – 2026</p><h3>Chargé d'affaires FTTH en alternance</h3><p class="org">Orange, Dijon</p><p class="d">74 pré-études de raccordement traitées en autonomie en Côte-d'Or, dans l'Yonne et les Vosges, pendant un BUT Réseaux et Télécommunications.</p></li>
+        <li><p class="when">2026 – 2028</p><h3>Business Manager junior, Flux Vision</h3><p class="org">Orange Business, Nanterre</p><p class="d">Analyse anonyme des flux de population par le réseau mobile, en parallèle du Mastère Ingénieur d'affaires d'Euridis.</p></li>
+        <li><p class="when">2026</p><h3>Fondateur de Sonar</h3><p class="org">Agence de prospection</p><p class="d">Campagnes Meta Ads pour audioprothésistes indépendants, 1 249 cabinets qualifiés à la main.</p></li>
+        <li><p class="when">2028 – 2030</p><h3>Business Developer Sport et Événementiel</h3><p class="org">Orange Business</p><p class="d">Offre dédiée aux stades et aux fan zones, premiers contrats avec des clubs de Ligue 1.</p></li>
+        <li><p class="when">2030 – 2033</p><h3>Fondateur de Ferveur</h3><p class="org">Plateforme de pilotage des stades</p><p class="d">Billetterie, flux et restauration sur un seul écran. Quatorze clubs européens équipés, puis une cession.</p></li>
+        <li><p class="when">2033 – 2035</p><h3>Directeur général délégué, business et data</h3><p class="org">Olympique de Marseille</p><p class="d">Revenus commerciaux, billetterie, partenariats et stratégie data du club.</p></li>
+        <li class="now"><p class="when">Depuis 2036</p><h3>Président</h3><p class="org">Olympique de Marseille</p><p class="d">Nommé à 30 ans. Deux coupes d'Europe et un championnat de France depuis la nomination.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="light pad" id="palmares" aria-labelledby="pal-title">
+    <div class="wrap split">
+      <div><h2 id="pal-title">Palmarès</h2><p class="sub">Sous ma présidence</p><p class="intro">Des titres qui récompensent un projet construit sur la durée, avec un effectif stable et un budget tenu.</p></div>
+      <ol class="titles">
+        <li><span class="yr">2038</span><div><strong>Coupe d'Europe</strong><span>Deuxième sacre européen de la présidence</span></div></li>
+        <li><span class="yr">2037</span><div><strong>Championnat de France</strong><span>Titre national avec six joueurs formés au club</span></div></li>
+        <li><span class="yr">2036</span><div><strong>Coupe d'Europe</strong><span>Quatre mois après la prise de fonction</span></div></li>
+        <li class="old"><span class="yr">1993</span><div><strong>Première Coupe d'Europe du club</strong><span>L'héritage qui fixe le niveau d'exigence</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="dark pad" id="realisations" aria-labelledby="real-title">
+    <div class="wrap">
+      <div class="center"><h2 id="real-title">Chantiers menés</h2><p class="sub">Le problème de départ, et ce qui a changé</p></div>
+      <div class="cases">
+        <article class="case"><div class="metric">17 min<small>d'attente moyenne aux portes, contre plus de 30</small></div><h3>Le Vélodrome connecté</h3><p>Mesure des flux en temps réel autour du stade, portes ouvertes selon l'affluence et horaires coordonnés avec les transports de la métropole.</p></article>
+        <article class="case"><div class="metric">120<small>entreprises de la région partenaires</small></div><h3>Le programme partenaires régionaux</h3><p>Une équipe commerciale dédiée aux PME et ETI locales, avec des offres accessibles, pour ne plus dépendre de quelques grands sponsors.</p></article>
+        <article class="case"><div class="metric">60<small>jeunes formés chaque année</small></div><h3>L'Académie de l'alternance</h3><p>Billetterie, data, sécurité, événementiel : des alternants de la ville recrutés chaque année, dont plus d'un tiers embauchés ensuite.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light pad" id="competences" aria-labelledby="comp-title">
+    <div class="wrap">
+      <div class="center"><h2 id="comp-title">Compétences</h2><p class="sub">Un profil technico-commercial</p></div>
+      <div class="skills">
+        <div class="skill"><h3>Pilotage de projet</h3><p>Mener un chantier du diagnostic à la livraison.</p><ul class="tags"><li>Études FTTH</li><li>Coordination terrain</li><li>Outils SI Orange</li></ul></div>
+        <div class="skill"><h3>Développement commercial</h3><p>Ouvrir un marché et conclure des ventes complexes.</p><ul class="tags"><li>Salesforce</li><li>HubSpot</li><li>Sales Navigator</li><li>Prospection</li></ul></div>
+        <div class="skill"><h3>Donnée et analyse</h3><p>Transformer des flux bruts en décisions claires.</p><ul class="tags"><li>Power BI</li><li>Python</li><li>Analyse de flux</li></ul></div>
+        <div class="skill"><h3>Réseaux</h3><p>Comprendre ce qui fait tourner un stade connecté.</p><ul class="tags"><li>Cisco</li><li>VLAN</li><li>Linux</li><li>Fibre optique</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light collab center" aria-labelledby="collab-title" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <h2 id="collab-title">Construisons ensemble</h2>
+      <p>Entreprises, collectivités, écoles : le club cherche des partenaires qui partagent son ambition pour Marseille.</p>
+      <svg class="chev" viewBox="0 0 44 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l21 14L43 1"/></svg>
+    </div>
+  </section>
+
+  <section class="dark contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-title">Écrire à la présidence</h2>
+        <div class="contact-person">
+          <img src="assets/img/visage.jpg" alt="" width="240" height="240">
+          <div><strong>Jasim Bouchekoua</strong><span>Président, Olympique de Marseille</span></div>
+        </div>
+        <p class="lead">Presse, partenariats ou demandes d'intervention : le secrétariat de la présidence transmet chaque message et répond sous une semaine.</p>
+      </div>
+      <dl>
+        <div><dt>Presse</dt><dd>Via le service communication du club</dd></div>
+        <div><dt>Partenariats</dt><dd>Programme partenaires régionaux</dd></div>
+        <div><dt>Interventions</dt><dd>Sport business, data et stades connectés</dd></div>
+        <div><dt>Ville</dt><dd>Marseille</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo agrandie">
+  <button class="lb-close" type="button" id="lb-close">Fermer</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Portfolio de projection imaginé en 2026 et situé en 2038. Les étapes à partir de 2028 sont fictives, les photos et la vidéo sont générées par IA. Site personnel sans lien avec l'Olympique de Marseille.</p>
+    <p>Jasim Bouchekoua</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById("nav");
+  var btn = nav.querySelector(".menu-btn");
+  var navLinks = nav.querySelectorAll("ul a");
+  function clearCurrent(){ navLinks.forEach(function(a){ a.removeAttribute("aria-current"); }); }
+  function onScroll(){
+    nav.classList.toggle("scrolled", window.scrollY > 20);
+    if (window.scrollY < 300) clearCurrent();
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+
+  function closeMenu(){ nav.classList.remove("open"); btn.setAttribute("aria-expanded","false"); btn.textContent = "Menu"; }
+  btn.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Fermer" : "Menu";
+  });
+  navLinks.forEach(function(a){ a.addEventListener("click", closeMenu); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && nav.classList.contains("open")) { closeMenu(); btn.focus(); } });
+
+  var links = {};
+  navLinks.forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && links[e.target.id]){ clearCurrent(); links[e.target.id].setAttribute("aria-current","true"); }
+      });
+    }, {rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(links).forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+  document.querySelectorAll(".zoom").forEach(function(z){
+    z.addEventListener("click", function(){
+      var fig = z.closest("figure"), img = fig.querySelector("img");
+      lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt;
+      lbCap.textContent = fig.querySelector("figcaption strong").textContent;
+      if (lb.showModal) lb.showModal();
+    });
+  });
+  document.getElementById("lb-close").addEventListener("click", function(){ lb.close(); });
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+
+  var vid = document.getElementById("bleed-video"), vt = document.getElementById("video-toggle");
+  var userPaused = false;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function tryPlay(){ var pr = vid.play(); if (pr && pr.catch) pr.catch(function(){}); }
+  function setLabel(){ vt.textContent = vid.paused ? "Lire la vidéo" : "Mettre en pause"; vt.setAttribute("aria-pressed", vid.paused ? "true" : "false"); }
+  function ready(){ vid.classList.add("ready"); vt.hidden = false; setLabel(); }
+  vid.addEventListener("loadeddata", ready);
+  vid.addEventListener("playing", function(){ ready(); setLabel(); });
+  vid.addEventListener("pause", setLabel);
+  vt.addEventListener("click", function(){
+    if (vid.paused){ userPaused = false; tryPlay(); } else { userPaused = true; vid.pause(); }
+  });
+  if (!reduce && "IntersectionObserver" in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ if (!userPaused) tryPlay(); }
+        else if (!vid.paused){ vid.pause(); }
+      });
+    }, {threshold:.2}).observe(vid);
+  }
+})();
+</script>
+</body>
+</html>
