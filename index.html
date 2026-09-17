@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasim Bouchekoua | Président de l'Olympique de Marseille</title>
+    
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= VARIABLES ================= */
+        :root {
+            --bg-dark: #0B0B0C;
+            --bg-light: #ECECEC;
+            --accent-blue: #5CC6F2;
+            --text-light: #F9F9F9;
+            --text-dark: #1A1A1A;
+            --font-title: 'DM Serif Display', serif;
+            --font-text: 'DM Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ================= RESET & BASE ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: var(--font-title); font-weight: normal; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ================= NAVIGATION ================= */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(11, 11, 12, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-title); font-size: 1.5rem; color: var(--text-light); }
+        .logo span { color: var(--accent-blue); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { 
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 2px;
+            background: var(--accent-blue); transition: var(--transition);
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        /* ================= HERO SECTION ================= */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        .hero-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        }
+        .hero-text h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1; margin-bottom: 1rem; }
+        .hero-text h1 span { display: block; font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--accent-blue); margin-top: 1rem;}
+        
+        /* Photo en Arche */
+        .hero-img-wrapper { display: flex; justify-content: center; position: relative; }
+        .arch-img {
+            width: 100%; max-width: 450px; aspect-ratio: 3/4;
+            border-radius: 250px 250px 0 0;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-bottom: 5px solid var(--accent-blue);
+        }
+
+        /* ================= BONJOUR / ABOUT ================= */
+        #about { background-color: var(--bg-light); color: var(--text-dark); padding: 8rem 0; position: relative; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+        .about-img { width: 100%; height: 600px; object-fit: cover; }
+        .about-card {
+            background: white; padding: 4rem; margin-left: -5rem; z-index: 2;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-left: 4px solid var(--accent-blue);
+        }
+        .about-card h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .about-card p { font-size: 1.1rem; margin-bottom: 1rem; color: #444; }
+
+        /* ================= BILAN (CHIFFRES) ================= */
+        #bilan { padding: 8rem 0; }
+        .section-title { font-size: 3rem; margin-bottom: 3rem; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .stat-card {
+            background: #151517; padding: 3rem 2rem; text-align: center;
+            border-top: 2px solid var(--accent-blue); transition: var(--transition);
+        }
+        .stat-card:hover { transform: translateY(-10px); background: #1C1C1F; }
+        .stat-number { font-family: var(--font-title); font-size: 3.5rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ================= CITATION ================= */
+        #citation {
+            background: linear-gradient(rgba(11, 11, 12, 0.8), rgba(11, 11, 12, 0.9)), url('image_3.png') center/cover fixed;
+            padding: 8rem 0; text-align: center;
+        }
+        blockquote { font-family: var(--font-title); font-size: clamp(2rem, 4vw, 3.5rem); max-width: 900px; margin: 0 auto; line-height: 1.3; }
+        blockquote span { color: var(--accent-blue); }
+
+        /* ================= VIDEO ================= */
+        #velodrome { position: relative; height: 80vh; overflow: hidden; background: #000; }
+        .video-container { width: 100%; height: 100%; position: relative; }
+        video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .video-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .video-title { font-family: var(--font-title); font-size: 4rem; margin-bottom: 2rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .play-pause-btn {
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2); color: white; width: 60px; height: 60px;
+            border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center;
+            transition: var(--transition);
+        }
+        .play-pause-btn:hover { background: var(--accent-blue); border-color: var(--accent-blue); transform: scale(1.1); }
+        .play-pause-btn svg { width: 20px; fill: currentColor; }
+
+        /* ================= MOMENTS FORTS (GALLERY) ================= */
+        #gallery { padding: 8rem 0; background-color: var(--bg-light); color: var(--text-dark); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .gallery-item { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 1rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;
+            opacity: 0; transition: var(--transition);
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* ================= PROJET DE CLUB ================= */
+        #projet { padding: 8rem 0; }
+        .projet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .projet-card {
+            background: #151517; padding: 2.5rem;
+            border-radius: 8px; border: 1px solid #222; transition: var(--transition);
+        }
+        .projet-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+        .projet-icon { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1.5rem; }
+        .projet-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .projet-card p { color: #aaa; font-size: 0.95rem; }
+
+        /* ================= PARCOURS & CHANTIERS ================= */
+        #parcours { padding: 8rem 0; background-color: var(--bg-light); color: var(--text-dark); }
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .timeline-item { margin-bottom: 3rem; position: relative; padding-left: 2rem; border-left: 2px solid #ddd; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px;
+            background: var(--accent-blue); border-radius: 50%;
+        }
+        .timeline-date { font-weight: bold; color: var(--accent-blue); margin-bottom: 0.5rem; display: block; }
+        .timeline-item h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+        .timeline-item h4 { font-family: var(--font-text); font-weight: 500; color: #666; margin-bottom: 1rem; }
+        
+        .logo-row { display: flex; gap: 1rem; margin-top: 1rem; align-items: center; }
+        .logo-row svg { height: 30px; fill: #444; }
+
+        .list-item { background: white; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--bg-dark); }
+
+        /* ================= COMPÉTENCES ================= */
+        #competences { padding: 6rem 0; text-align: center; border-bottom: 1px solid #222; }
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; margin-top: 3rem; }
+        .skill-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; color: #888; transition: var(--transition); }
+        .skill-item:hover { color: var(--text-light); }
+        .skill-item svg { width: 50px; height: 50px; fill: currentColor; }
+
+        /* ================= CONTACT ================= */
+        #contact { padding: 8rem 0; text-align: center; }
+        .contact-content { max-width: 600px; margin: 0 auto; }
+        .contact-photo {
+            width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+            margin: 0 auto 2rem; border: 3px solid var(--accent-blue);
+            object-position: top; /* Ajuste le cadrage sur ton visage */
+        }
+        .btn {
+            display: inline-block; padding: 1rem 2.5rem; background: var(--accent-blue);
+            color: var(--bg-dark); font-weight: bold; text-transform: uppercase;
+            letter-spacing: 1px; margin-top: 2rem; transition: var(--transition);
+        }
+        .btn:hover { background: white; }
+
+        /* ================= FOOTER ================= */
+        footer { padding: 3rem 0; text-align: center; border-top: 1px solid #222; color: #555; font-size: 0.85rem; }
+
+        /* ================= LIGHTBOX ================= */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 1000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .lightbox.active { opacity: 1; pointer-events: auto; }
+        .lightbox img { max-width: 90%; max-height: 90vh; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        .lightbox-close {
+            position: absolute; top: 30px; right: 40px; color: white; font-size: 3rem;
+            cursor: pointer; line-height: 1;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .split-section { grid-template-columns: 1fr; gap: 3rem; }
+            .about-card { margin-left: 0; margin-top: -4rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+                background: var(--bg-dark); flex-direction: column; align-items: center; justify-content: center;
+                transition: var(--transition);
+            }
+            .nav-links.active { left: 0; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">JASIM<span>.</span></div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <div class="nav-links">
+                <a href="#hero" class="active">Accueil</a>
+                <a href="#about">Le Bilan</a>
+                <a href="#projet">Le Projet</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text reveal">
+                <h1>Jasim<br>Bouchekoua <span>Président de l'Olympique de Marseille</span></h1>
+                <p style="color: #aaa; font-size: 1.2rem; margin-top: 1rem; max-width: 400px;">
+                    « Relier les gens à ce qui compte pour eux. »
+                </p>
+            </div>
+            <div class="hero-img-wrapper reveal">
+                <!-- Image Portrait Costume (image_4.png) -->
+                <img src="image_4.png" alt="Jasim Portrait" class="arch-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- BONJOUR / TEXTE -->
+    <section id="about">
+        <div class="container about-grid">
+            <div class="reveal">
+                <!-- Image Vitrine des trophées (image_5.png) -->
+                <img src="image_5.png" alt="Trophées" class="about-img">
+            </div>
+            <div class="about-card reveal">
+                <h2>Bonjour, je suis Jas.</h2>
+                <p>Nommé en janvier 2036, à l'âge de 30 ans, je porte aujourd'hui la responsabilité du club de football le plus passionné de France : l'Olympique de Marseille.</p>
+                <p>Mon parcours ne commence pas sur les pelouses, mais dans les télécoms et la data. J'ai débuté en tirant de la fibre optique dans les foyers avant de développer des solutions de flux pour les plus grands stades européens.</p>
+                <p>Aujourd'hui, ma mission est de conjuguer la ferveur populaire avec l'excellence opérationnelle pour ramener l'OM au sommet de l'Europe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BILAN (CHIFFRES) -->
+    <section id="bilan">
+        <div class="container">
+            <h2 class="section-title reveal">Le Bilan (2036-2038)</h2>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Coupes d'Europe (2036, 2038)</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Taux de remplissage</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">+41%</div>
+                    <div class="stat-label">Revenus commerciaux</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number">120</div>
+                    <div class="stat-label">Entreprises Partenaires</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CITATION -->
+    <section id="citation">
+        <div class="container reveal">
+            <blockquote>
+                « J'ai commencé en tirant de la fibre jusqu'aux maisons. Mon métier n'a pas changé : <span>relier les gens à ce qui compte pour eux.</span> »
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- VIDEO VÉLODROME -->
+    <section id="velodrome">
+        <div class="video-container">
+            <!-- J'ai laissé la vidéo placeholder mixkit ici puisque tu n'as pas uploadé de fichier .mp4 -->
+            <video id="stadium-video" loop muted playsinline poster="image_3.png">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-cheering-crowd-of-a-stadium-at-night-114-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h2 class="video-title">Le Vélodrome</h2>
+                <button class="play-pause-btn" onclick="toggleVideo()" id="playBtn">
+                    <!-- Play Icon SVG -->
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOMENTS FORTS -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal" style="color: var(--bg-dark);">Moments Forts</h2>
+            <div class="gallery-grid">
+                <!-- Stade plein (image_3.png) -->
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="image_3.png" alt="Stade plein">
+                    <div class="gallery-overlay">Vue d'ensemble</div>
+                </div>
+                <!-- Virage (image_2.png) -->
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="image_2.png" alt="Virage supporters">
+                    <div class="gallery-overlay">La passion des virages</div>
+                </div>
+                <!-- Tifo (image.png) -->
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="image.png" alt="Tifo géant">
+                    <div class="gallery-overlay">Tifo historique</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJET DE CLUB -->
+    <section id="projet">
+        <div class="container">
+            <h2 class="section-title reveal">Le Projet de Club</h2>
+            <div class="projet-grid">
+                <div class="projet-card reveal">
+                    <div class="projet-icon">👤</div>
+                    <h3>Connaître chaque supporter</h3>
+                    <p>La data au service de l'expérience. Nos données ne sont jamais revendues, elles servent uniquement à personnaliser le lien avec le club.</p>
+                </div>
+                <div class="projet-card reveal">
+                    <div class="projet-icon">🏟️</div>
+                    <h3>Stade vivant 365j/an</h3>
+                    <p>Le Vélodrome n'est plus qu'un stade de match. Il est le coeur battant de la ville, ouvert aux événements, à la culture et aux entreprises locales.</p>
+                </div>
+                <div class="projet-card reveal">
+                    <div class="projet-icon">🌱</div>
+                    <h3>Former à Marseille</h3>
+                    <p>Création de l'Académie de l'Alternance : 60 jeunes marseillais formés chaque année aux métiers du sport et de la data.</p>
+                </div>
+                <div class="projet-card reveal">
+                    <div class="projet-icon">📈</div>
+                    <h3>Comptes qui tiennent</h3>
+                    <p>Une rigueur financière absolue. La performance sportive ne se fera plus au détriment de la santé économique de l'institution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARCOURS & CHANTIERS -->
+    <section id="parcours">
+        <div class="container split-section">
+            <!-- Colonne 1 : Parcours -->
+            <div class="reveal">
+                <h2 style="font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 2rem;">Mon Parcours</h2>
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">Depuis 2036</span>
+                    <h3>Président</h3>
+                    <h4>Olympique de Marseille</h4>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2033 - 2035</span>
+                    <h3>DG Délégué Business & Data</h3>
+                    <h4>Olympique de Marseille</h4>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2030 - 2033</span>
+                    <h3>Fondateur</h3>
+                    <h4>Ferveur (Plateforme pilotage de stades)</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Déploiement dans 14 clubs européens puis cession de l'entreprise.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2028 - 2030</span>
+                    <h3>Business Developer Sport</h3>
+                    <h4>Orange Business (Flux Vision)</h4>
+                    <div class="logo-row">
+                        <!-- Orange Logo SVG -->
+                        <svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#F16E00"/><path d="M20 80h60v5H20z" fill="#fff"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Palmarès & Chantiers -->
+            <div class="reveal">
+                <h2 style="font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 2rem;">Palmarès & Actions</h2>
+                
+                <h4 style="margin-bottom: 1rem; color: var(--accent-blue);">Trophées</h4>
+                <div class="list-item">🏆 2 Coupes d'Europe (2036, 2038)</div>
+                <div class="list-item">🥇 Champion de France 2037</div>
+                <div class="list-item">⭐ En mémoire de 1993</div>
+
+                <h4 style="margin: 2rem 0 1rem; color: var(--accent-blue);">Grands Chantiers Menés</h4>
+                <div class="list-item">
+                    <strong>Vélodrome Connecté</strong><br>
+                    <span style="font-size: 0.9rem; color: #666;">Réduction de l'attente aux buvettes de 30+ à 17 minutes grâce à l'analyse de flux.</span>
+                </div>
+                <div class="list-item">
+                    <strong>Programme Partenaires Régionaux</strong><br>
+                    <span style="font-size: 0.9rem; color: #666;">Intégration de 120 PME/ETI au tissu économique du club.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES / LOGOS -->
+    <section id="competences">
+        <div class="container reveal">
+            <h2 class="section-title">Mes Outils & Socle Technique</h2>
+            <div class="skills-container">
+                <!-- Python -->
+                <div class="skill-item">
+                    <svg viewBox="0 0 110 110"><path d="M53.9 0C25 0 21.6 12.6 21.6 12.6l-.1 13.3h33.3v4.7H17.4c-19.3 0-20 28.2-14.8 38.6 4.9 10 15 9.4 15 9.4h7.5v-13c0-15.1 12.4-17.5 12.4-17.5h23.7c14.6 0 14.6-14.3 14.6-14.3V10.1S75 0 53.9 0zm-14.9 8.2c2.6 0 4.7 2.1 4.7 4.7S41.6 17.6 39 17.6s-4.7-2.1-4.7-4.7 2.1-4.7 4.7-4.7zM78.6 30.6H71v13.1c0 14.6-12.2 17.2-12.2 17.2H34.4s-14.1 0-14.1 14.7V89s-1.1 21 21.1 21c21.2 0 25.2-12.8 25.2-12.8l.1-13.6H33.8v-4.7h36.9c19 0 20.3-27.7 15.3-38.3-4.7-10.1-15-9.6-15-9.6h-12.4V30.6zm-8.3 64.9c2.6 0 4.7 2.1 4.7 4.7s-2.1 4.7-4.7 4.7-4.7-2.1-4.7-4.7 2.1-4.7 4.7-4.7z" fill="currentColor"/></svg>
+                    <span>Python</span>
+                </div>
+                <!-- PowerBI -->
+                <div class="skill-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 6h4v16h-4V6zm-6 6h4v10H6V12zm12-10h4v20h-4V2z" fill="currentColor"/></svg>
+                    <span>Power BI</span>
+                </div>
+                <!-- Salesforce -->
+                <div class="skill-item">
+                    <svg viewBox="0 0 100 100"><path d="M78 43c-1-17-26-21-36-7-4-5-15-7-22 3-8 0-14 6-14 14s6 14 14 14h58c10 0 17-7 17-15s-6-9-17-9z" fill="currentColor"/></svg>
+                    <span>Salesforce</span>
+                </div>
+                <!-- HubSpot -->
+                <div class="skill-item">
+                    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="20" cy="50" r="6"/><circle cx="80" cy="50" r="6"/><circle cx="50" cy="20" r="6"/><circle cx="50" cy="80" r="6"/><path d="M25 45l20-15M75 55L55 70" stroke="currentColor" stroke-width="4"/></svg>
+                    <span>HubSpot</span>
+                </div>
+                <!-- Cisco / Réseaux -->
+                <div class="skill-item">
+                    <svg viewBox="0 0 100 100"><path d="M10 50h10m10-20v40m10-50v60m10-70v80m10-50v60m10-20v40m10-10h10" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
+                    <span>Réseaux / Cisco</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container contact-content reveal">
+            <!-- Photo ronde réutilisant le portrait image_4.png avec un recadrage CSS -->
+            <img src="image_4.png" alt="Jasim" class="contact-photo">
+            <h2 style="font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 1rem;">Construisons l'avenir ensemble</h2>
+            <p style="color: #aaa;">Que ce soit pour échanger sur la data sportive, les modèles économiques de stades ou l'avenir du club, ma porte est ouverte.</p>
+            <a href="#" class="btn">Me contacter sur LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Portfolio fictif imaginé en 2026, projeté en 2038.<br>Photos générées par IA.<br>Ce site n'a aucun lien officiel avec l'Olympique de Marseille ni Orange.</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX HTML -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Menu Mobile
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Active Link on Scroll
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Video Controls
+        const video = document.getElementById('stadium-video');
+        const playBtn = document.getElementById('playBtn');
+        let isPlaying = false;
+
+        function toggleVideo() {
+            if(isPlaying) {
+                video.pause();
+                playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+            } else {
+                video.play();
+                playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) closeLightbox();
+        });
+    </script>
+</body>
+</html>
